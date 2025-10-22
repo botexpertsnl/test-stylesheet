@@ -1,9 +1,44 @@
-/* Reposition Voiceflow launcher to the middle right */
+/* Positioneer de launcher verticaal in het midden rechts */
 .vfrc-launcher__container {
   position: fixed !important;
   top: 50% !important;
-  right: 20px !important;
+  right: 0 !important;
   bottom: auto !important;
-  transform: translateY(-50%) !important; /* perfectly centered vertically */
-  z-index: 99999 !important; /* stay on top */
+  transform: translateY(-50%) !important;
+  z-index: 99999 !important;
+}
+
+/* Maak de knop een balkje */
+.vfrc-launcher {
+  width: 40px !important;           /* smalle breedte */
+  height: 160px !important;         /* lange verticale balk */
+  border-radius: 8px 0 0 8px !important; /* afgeronde hoek links */
+  background: #0f62fe !important;   /* blauwe achtergrond */
+  color: #fff !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Verberg standaard icoon/media */
+.vfrc-launcher--media {
+  display: none !important;
+}
+
+/* Verticale tekst in de balk */
+.vfrc-launcher__label {
+  writing-mode: vertical-rl !important;   /* tekst verticaal */
+  transform: rotate(180deg) !important;   /* leesbaar maken */
+  font-size: 14px !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  text-align: center !important;
+  color: #fff !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
 }
