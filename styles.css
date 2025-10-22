@@ -1,9 +1,9 @@
-/* Make the entire Voiceflow launcher container transparent */
-.vfrc-launcher__container,
-.vfrc-launcher__container * {
-  background: transparent !important;
-  color: transparent !important;
-  border: none !important;
-  opacity: 0 !important;
-  pointer-events: none !important; /* so it's not clickable */
+/* Reposition Voiceflow launcher to the middle right */
+.vfrc-launcher__container {
+  position: fixed !important;
+  top: 50% !important;
+  right: 20px !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important; /* perfectly centered vertically */
+  z-index: 99999 !important; /* stay on top */
 }
