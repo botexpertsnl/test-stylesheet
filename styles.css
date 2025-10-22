@@ -1,3 +1,27 @@
+/* Force Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+.vfrc,
+.vfrc * {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji" !important;
+}
+
+/* Response buttons */
+.vfrc-system-response--actions .vfrc-button {
+  background-color: #F4F4F4 !important;
+  border-color: #F4F4F4 !important;
+  color: #868a91 !important;
+}
+.vfrc-system-response--actions .vfrc-button:hover {
+  background-color: #E0E0E0 !important;
+  border-color: #E0E0E0 !important;
+}
+
+/* Carousel images */
+.vfrc-carousel img { object-fit: contain !important; }
+
+/* Header */
+.vfrc-header { background-color: #000000 !important; }
+
 /* Positioneer de launcher verticaal in het midden rechts */
 .vfrc-launcher__container {
   position: fixed !important;
@@ -8,12 +32,12 @@
   z-index: 99999 !important;
 }
 
-/* Maak de knop een balkje */
+/* Balk-stijl */
 .vfrc-launcher {
-  width: 40px !important;           /* smalle breedte */
-  height: 160px !important;         /* lange verticale balk */
-  border-radius: 8px 0 0 8px !important; /* afgeronde hoek links */
-  background: #0f62fe !important;   /* blauwe achtergrond */
+  width: 40px !important;
+  height: 160px !important;
+  border-radius: 8px 0 0 8px !important;
+  background: #0f62fe !important;
   color: #fff !important;
   display: flex !important;
   justify-content: center !important;
@@ -25,14 +49,12 @@
 }
 
 /* Verberg standaard icoon/media */
-.vfrc-launcher--media {
-  display: none !important;
-}
+.vfrc-launcher--media { display: none !important; }
 
 /* Verticale tekst in de balk */
 .vfrc-launcher__label {
-  writing-mode: vertical-rl !important;   /* tekst verticaal */
-  transform: rotate(180deg) !important;   /* leesbaar maken */
+  writing-mode: vertical-rl !important;
+  transform: rotate(180deg) !important;
   font-size: 14px !important;
   font-weight: bold !important;
   text-transform: uppercase !important;
