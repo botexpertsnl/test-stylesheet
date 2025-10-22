@@ -1,18 +1,9 @@
-<style>
-/* HIDE - VF Launcher completely */
-.vfrc-launcher,
-.vfrc-launcher *,
-.vfrc-launcher--media,
-.vfrc-launcher__label,
-[class*="vfrc-launcher__label"],
-[class*="vfrc-launcher--media"] {
-  display: none !important;
-  visibility: hidden !important;
+/* Make the entire Voiceflow launcher container transparent */
+.vfrc-launcher__container,
+.vfrc-launcher__container * {
+  background: transparent !important;
+  color: transparent !important;
+  border: none !important;
   opacity: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  pointer-events: none !important;
-  overflow: hidden !important;
+  pointer-events: none !important; /* so it's not clickable */
 }
-/* END HIDE */
-</style>
