@@ -1,8 +1,8 @@
 /* ================================
    FORCE HIDE LAUNCHER WHEN WIDGET IS OPEN
-   (werkt als body.vf-open via JS wordt toegevoegd)
    ================================ */
 body.vf-open .vfrc-launcher__container,
+body.vf-open .vfrc-launcher__container *,
 body.vf-open .vfrc-launcher {
   display: none !important;
   visibility: hidden !important;
@@ -13,13 +13,15 @@ body.vf-open .vfrc-launcher {
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden !important;
+  position: absolute !important;
+  z-index: -1 !important;
 }
 
 /* ================================
-   CHANGE WIDGET LABEL TEXT
+   Change widget text
    ================================ */
 .vfrc-launcher__label {
-  font-size: 0 !important;     /* verberg originele tekst */
+  font-size: 0 !important;       /* verberg originele tekst */
   position: relative !important;
 }
 .vfrc-launcher__label::after {
@@ -41,7 +43,6 @@ body.vf-open .vfrc-launcher {
    TYPOGRAPHY (Inter font)
    ================================ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 .vfrc,
 .vfrc * {
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
@@ -111,9 +112,8 @@ body.vf-open .vfrc-launcher {
    ================================ */
 #vf-close-launcher {
   position: fixed !important;
-  top: 50% !important;          /* zelfde verticale lijn als launcher */
-  right: 50px !important;       /* afstand tot rechterkant */
-  transform: translateY(-180%) !important; /* schuif omhoog boven balk */
+  right: 60px !important;      /* afstand van rechterkant */
+  top: calc(50% - 120px) !important; /* X boven de launcher balk */
   width: 28px !important;
   height: 28px !important;
   display: flex !important;
