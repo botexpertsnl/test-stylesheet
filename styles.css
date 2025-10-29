@@ -16,6 +16,27 @@ body.vf-open .vfrc-launcher {
 }
 
 /* ================================
+   Change widget text
+   ================================ */
+/* Hide the original text */
+.vfrc-launcher__label {
+  font-size: 0 !important; /* hide old label */
+}
+
+/* Replace with your own text */
+.vfrc-launcher__label::after {
+  content: "AI assistant";
+  font-size: 14px !important;
+  font-weight: bold !important;
+  color: #fff !important;
+  writing-mode: vertical-rl !important;
+  transform: rotate(180deg) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+}
+
+
+/* ================================
    TYPOGRAPHY (Inter font)
    ================================ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
