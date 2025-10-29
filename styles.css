@@ -1,84 +1,26 @@
 /* ================================
-   TYPOGRAPHY (Inter font)
+   FORCE LAUNCHER BEHIND WIDGET WHEN OPEN
    ================================ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-.vfrc,
-.vfrc * {
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji" !important;
+body.vf-open .vfrc-launcher__container,
+body.vf-open .vfrc-launcher__container *,
+body.vf-open .vfrc-launcher {
+  z-index: 1 !important;        /* lager dan de widget */
+  opacity: 0 !important;        /* onzichtbaar */
+  pointer-events: none !important; /* niet klikbaar */
+  transition: opacity 0.2s ease;
 }
-
 
 /* ================================
-   RESPONSE BUTTONS
+   Change widget text
    ================================ */
-.vfrc-system-response--actions .vfrc-button {
-  background-color: #f4f4f4 !important;
-  border-color: #f4f4f4 !important;
-  color: #868a91 !important;
-}
-.vfrc-system-response--actions .vfrc-button:hover {
-  background-color: #e0e0e0 !important;
-  border-color: #e0e0e0 !important;
-}
-
-
-/* ================================
-   CAROUSEL IMAGES
-   ================================ */
-.vfrc-carousel img {
-  object-fit: contain !important;
-}
-
-
-/* ================================
-   HEADER
-   ================================ */
-.vfrc-header {
-  background-color: #000000 !important;
-}
-
-
-/* ================================
-   LAUNCHER STYLING (alleen als widget gesloten is)
-   ================================ */
-body:not(.vf-open) .vfrc-launcher__container {
-  position: fixed !important;
-  top: 50% !important;
-  right: 0 !important;
-  bottom: auto !important;
-  transform: translateY(-50%) !important;
-  z-index: 99999 !important;
-}
-
-body:not(.vf-open) .vfrc-launcher {
-  width: 40px !important;
-  height: 160px !important;
-  border-radius: 8px 0 0 8px !important;
-  background: #000000 !important;
-  color: #fff !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  flex-direction: column !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
-  border: none !important;
-  padding: 0 !important;
-}
-
-/* Verberg standaard icoon/media */
-body:not(.vf-open) .vfrc-launcher--media {
-  display: none !important;
-}
-
-/* Verticale tekst in de balk */
-body:not(.vf-open) .vfrc-launcher__label {
-  visibility: hidden !important;  /* verberg originele tekst */
+/* Verberg originele label */
+.vfrc-launcher__label {
+  visibility: hidden !important;
   position: relative !important;
 }
 
-body:not(.vf-open) .vfrc-launcher__label::after {
+/* Toon vervangende tekst */
+.vfrc-launcher__label::after {
   content: "AI assistant";
   visibility: visible !important;
   position: absolute;
@@ -95,6 +37,89 @@ body:not(.vf-open) .vfrc-launcher__label::after {
   letter-spacing: 2px !important;
 }
 
+/* ================================
+   TYPOGRAPHY (Inter font)
+   ================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.vfrc,
+.vfrc * {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji" !important;
+}
+
+/* ================================
+   RESPONSE BUTTONS
+   ================================ */
+.vfrc-system-response--actions .vfrc-button {
+  background-color: #f4f4f4 !important;
+  border-color: #f4f4f4 !important;
+  color: #868a91 !important;
+}
+.vfrc-system-response--actions .vfrc-button:hover {
+  background-color: #e0e0e0 !important;
+  border-color: #e0e0e0 !important;
+}
+
+/* ================================
+   CAROUSEL IMAGES
+   ================================ */
+.vfrc-carousel img {
+  object-fit: contain !important;
+}
+
+/* ================================
+   HEADER
+   ================================ */
+.vfrc-header {
+  background-color: #000000 !important;
+}
+
+/* ================================
+   LAUNCHER STYLING (default state)
+   ================================ */
+.vfrc-launcher__container {
+  position: fixed !important;
+  top: 50% !important;
+  right: 0 !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
+  z-index: 99999 !important; /* hoog maar onder de widget */
+}
+
+.vfrc-launcher {
+  width: 40px !important;
+  height: 160px !important;
+  border-radius: 8px 0 0 8px !important;
+  background: #000000 !important;
+  color: #fff !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Verberg standaard icoon/media */
+.vfrc-launcher--media {
+  display: none !important;
+}
+
+/* Verticale tekst in de balk */
+.vfrc-launcher__label {
+  writing-mode: vertical-rl !important;
+  transform: rotate(180deg) !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  text-align: center !important;
+  color: #fff !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+}
 
 /* ================================
    CUSTOM CLOSE BUTTON (X)
