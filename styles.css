@@ -18,14 +18,21 @@ body.vf-open .vfrc-launcher {
 /* ================================
    Change widget text
    ================================ */
-/* Hide the original text */
+/* Verberg originele label */
 .vfrc-launcher__label {
-  font-size: 0 !important; /* hide old label */
+  visibility: hidden !important;   /* volledig onzichtbaar */
+  position: relative !important;   /* nodig voor ::after positioning */
 }
 
-/* Replace with your own text */
+/* Toon vervangende tekst */
 .vfrc-launcher__label::after {
   content: "AI assistant";
+  visibility: visible !important;
+  position: absolute;
+  inset: 0; /* zelfde ruimte als originele tekst */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 14px !important;
   font-weight: bold !important;
   color: #fff !important;
