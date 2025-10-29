@@ -1,14 +1,15 @@
-/* Launcher minimaliseren zodra de widget open is */
+/* Launcher volledig verbergen zodra de widget open is */
 body.vf-open .vfrc-launcher__container,
 body.vf-open .vfrc-launcher {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
   width: 0 !important;
   height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
   overflow: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important; /* voorkomt dat je er nog op kunt klikken */
 }
+
 
 
 
