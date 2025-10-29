@@ -1,21 +1,10 @@
 /* ================================
-   FORCE HIDE LAUNCHER WHEN WIDGET IS OPEN
+   FORCE LAUNCHER BEHIND WIDGET WHEN OPEN
    ================================ */
-body.vf-open .vfrc-launcher__container,
-body.vf-open .vfrc-launcher__container *,
-body.vf-open .vfrc-launcher {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  width: 0 !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  position: absolute !important;
-  z-index: -1 !important; /* duw het naar achteren */
+body.vf-open .vfrc-launcher__container {
+  z-index: 0 !important;   /* duw naar achteren */
 }
+
 
 /* ================================
    Change widget text
@@ -44,6 +33,7 @@ body.vf-open .vfrc-launcher {
   letter-spacing: 2px !important;
 }
 
+
 /* ================================
    TYPOGRAPHY (Inter font)
    ================================ */
@@ -54,6 +44,7 @@ body.vf-open .vfrc-launcher {
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji" !important;
 }
+
 
 /* ================================
    RESPONSE BUTTONS
@@ -68,6 +59,7 @@ body.vf-open .vfrc-launcher {
   border-color: #e0e0e0 !important;
 }
 
+
 /* ================================
    CAROUSEL IMAGES
    ================================ */
@@ -75,12 +67,14 @@ body.vf-open .vfrc-launcher {
   object-fit: contain !important;
 }
 
+
 /* ================================
    HEADER
    ================================ */
 .vfrc-header {
   background-color: #000000 !important;
 }
+
 
 /* ================================
    LAUNCHER STYLING (default state)
@@ -91,7 +85,7 @@ body.vf-open .vfrc-launcher {
   right: 0 !important;
   bottom: auto !important;
   transform: translateY(-50%) !important;
-  z-index: 99999 !important;
+  z-index: 99999 !important; /* standaard boven alles */
 }
 
 .vfrc-launcher {
@@ -127,6 +121,7 @@ body.vf-open .vfrc-launcher {
   white-space: nowrap !important;
   margin: 0 !important;
 }
+
 
 /* ================================
    CUSTOM CLOSE BUTTON (X)
