@@ -1,8 +1,8 @@
 /* ================================
    FORCE HIDE LAUNCHER WHEN WIDGET IS OPEN
+   (werkt als body.vf-open via JS wordt toegevoegd)
    ================================ */
 body.vf-open .vfrc-launcher__container,
-body.vf-open .vfrc-launcher__container *,
 body.vf-open .vfrc-launcher {
   display: none !important;
   visibility: hidden !important;
@@ -13,29 +13,17 @@ body.vf-open .vfrc-launcher {
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden !important;
-  position: absolute !important;
-  z-index: -1 !important; /* duw het naar achteren */
 }
-
 
 /* ================================
-   Change widget text
+   CHANGE WIDGET LABEL TEXT
    ================================ */
-/* Verberg originele label */
 .vfrc-launcher__label {
-  visibility: hidden !important;   /* volledig onzichtbaar */
-  position: relative !important;   /* nodig voor ::after positioning */
+  font-size: 0 !important;     /* verberg originele tekst */
+  position: relative !important;
 }
-
-/* Toon vervangende tekst */
 .vfrc-launcher__label::after {
   content: "AI assistant";
-  visibility: visible !important;
-  position: absolute;
-  inset: 0; /* zelfde ruimte als originele tekst */
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 14px !important;
   font-weight: bold !important;
   color: #fff !important;
@@ -43,8 +31,11 @@ body.vf-open .vfrc-launcher {
   transform: rotate(180deg) !important;
   text-transform: uppercase !important;
   letter-spacing: 2px !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  display: block;
 }
-
 
 /* ================================
    TYPOGRAPHY (Inter font)
@@ -91,7 +82,6 @@ body.vf-open .vfrc-launcher {
   position: fixed !important;
   top: 50% !important;
   right: 0 !important;
-  bottom: auto !important;
   transform: translateY(-50%) !important;
   z-index: 99999 !important;
 }
@@ -116,27 +106,13 @@ body.vf-open .vfrc-launcher {
   display: none !important;
 }
 
-/* Verticale tekst in de balk */
-.vfrc-launcher__label {
-  writing-mode: vertical-rl !important;
-  transform: rotate(180deg) !important;
-  font-size: 14px !important;
-  font-weight: bold !important;
-  text-transform: uppercase !important;
-  letter-spacing: 2px !important;
-  text-align: center !important;
-  color: #fff !important;
-  white-space: nowrap !important;
-  margin: 0 !important;
-}
-
 /* ================================
    CUSTOM CLOSE BUTTON (X)
    ================================ */
 #vf-close-launcher {
   position: fixed !important;
-  top: 50% !important; /* zelfde verticale lijn als launcher */
-  right: 50px !important; /* afstand tot rechterkant */
+  top: 50% !important;          /* zelfde verticale lijn als launcher */
+  right: 50px !important;       /* afstand tot rechterkant */
   transform: translateY(-180%) !important; /* schuif omhoog boven balk */
   width: 28px !important;
   height: 28px !important;
