@@ -1,3 +1,9 @@
+/* Launcher volledig verbergen zodra widget open is (TEST) */
+body.vf-open .vfrc-launcher__container {
+  display: none !important;
+}
+
+
 /* Force Inter font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 .vfrc,
