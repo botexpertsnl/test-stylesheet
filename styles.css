@@ -1,25 +1,32 @@
 /* ================================
-   FORCE LAUNCHER BEHIND WIDGET WHEN OPEN
+   FORCE LAUNCHER VERBERGEN WANNEER WIDGET OPEN IS
    ================================ */
 body.vf-open .vfrc-launcher__container,
-body.vf-open .vfrc-launcher__container *,
 body.vf-open .vfrc-launcher {
-  z-index: 1 !important;        /* lager dan de widget */
-  opacity: 0 !important;        /* onzichtbaar */
-  pointer-events: none !important; /* niet klikbaar */
-  transition: opacity 0.2s ease;
+  width: 6px !important;       /* heel smal maken */
+  height: 60px !important;     /* korter */
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  color: transparent !important;
+  opacity: 0 !important;       /* volledig onzichtbaar */
+  pointer-events: none !important;
+  transition: all 0.2s ease;
 }
 
+/* Label tekst ook weghalen in open state */
+body.vf-open .vfrc-launcher__label::after {
+  content: "" !important;
+}
+
+
 /* ================================
-   Change widget text
+   Change widget text (default state)
    ================================ */
-/* Verberg originele label */
 .vfrc-launcher__label {
   visibility: hidden !important;
   position: relative !important;
 }
-
-/* Toon vervangende tekst */
 .vfrc-launcher__label::after {
   content: "AI assistant";
   visibility: visible !important;
@@ -37,16 +44,17 @@ body.vf-open .vfrc-launcher {
   letter-spacing: 2px !important;
 }
 
+
 /* ================================
    TYPOGRAPHY (Inter font)
    ================================ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 .vfrc,
 .vfrc * {
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji" !important;
 }
+
 
 /* ================================
    RESPONSE BUTTONS
@@ -61,6 +69,7 @@ body.vf-open .vfrc-launcher {
   border-color: #e0e0e0 !important;
 }
 
+
 /* ================================
    CAROUSEL IMAGES
    ================================ */
@@ -68,12 +77,14 @@ body.vf-open .vfrc-launcher {
   object-fit: contain !important;
 }
 
+
 /* ================================
    HEADER
    ================================ */
 .vfrc-header {
   background-color: #000000 !important;
 }
+
 
 /* ================================
    LAUNCHER STYLING (default state)
@@ -84,7 +95,7 @@ body.vf-open .vfrc-launcher {
   right: 0 !important;
   bottom: auto !important;
   transform: translateY(-50%) !important;
-  z-index: 99999 !important; /* hoog maar onder de widget */
+  z-index: 99999 !important; /* standaard bovenaan */
 }
 
 .vfrc-launcher {
@@ -102,12 +113,10 @@ body.vf-open .vfrc-launcher {
   padding: 0 !important;
 }
 
-/* Verberg standaard icoon/media */
 .vfrc-launcher--media {
   display: none !important;
 }
 
-/* Verticale tekst in de balk */
 .vfrc-launcher__label {
   writing-mode: vertical-rl !important;
   transform: rotate(180deg) !important;
@@ -120,6 +129,7 @@ body.vf-open .vfrc-launcher {
   white-space: nowrap !important;
   margin: 0 !important;
 }
+
 
 /* ================================
    CUSTOM CLOSE BUTTON (X)
@@ -140,5 +150,5 @@ body.vf-open .vfrc-launcher {
   color: #111 !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
   cursor: pointer !important;
-  z-index: 2147483647 !important; /* altijd bovenaan */
+  z-index: 2147483647 !important;
 }
