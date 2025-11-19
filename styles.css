@@ -43,11 +43,24 @@
 
 /* ================================
    BASE LAUNCHER STYLE
+   (visual colors & border)
    ================================ */
 .vfrc-launcher {
   background: #000000 !important;
   color: #ffffff !important;
   border: 2px solid #ffffff !important;
+}
+
+
+/* ================================
+   POSITION: RIGHT MIDDLE (50%)
+   ================================ */
+.vfrc-launcher__container {
+  position: fixed !important;
+  top: 50% !important;
+  right: 0 !important;
+  transform: translateY(-50%) !important;
+  z-index: 99999 !important;
 }
 
 
@@ -60,8 +73,8 @@
   writing-mode: vertical-rl !important;
   transform: rotate(180deg) !important;
 
-  width: 60px !important;     /* zichtbaar breed */
-  height: 300px !important;   /* 5× zo lang */
+  width: 60px !important;    /* zichtbaar breed */
+  height: 300px !important;  /* lang, 5x default */
 
   display: flex !important;
   justify-content: center !important;
@@ -70,13 +83,13 @@
   padding: 0 !important;
 }
 
-/* Keep icon upright */
+/* Icon correct draaien */
 .vfrc-launcher--media,
 .vfrc-launcher--media * {
   transform: rotate(180deg) !important;
 }
 
-/* Label readable vertically */
+/* Label leesbaar verticaal */
 .vfrc-launcher__label {
   transform: rotate(180deg) !important;
   text-align: center !important;
