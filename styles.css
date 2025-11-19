@@ -1,72 +1,85 @@
-/* OPEN - Force Inter font */
+/* ================================
+   INTER FONT
+   ================================ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 .vfrc,
 .vfrc * {
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji" !important;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji" !important;
 }
-/* CLOSE - Force Inter font */
 
 
-/* OPEN - Reponse buttons */
+/* ================================
+   RESPONSE BUTTONS
+   ================================ */
 .vfrc-system-response--actions .vfrc-button {
   background-color: #F4F4F4 !important;
   border-color: #F4F4F4 !important;
-  color: #868a91 !important; /* button text */
+  color: #868a91 !important;
 }
 
 .vfrc-system-response--actions .vfrc-button:hover {
   background-color: #E0E0E0 !important;
   border-color: #E0E0E0 !important;
 }
-/* CLOSE - Reponse buttons */
 
 
-/* OPEN - Zorg dat afbeeldingen zich aanpassen in plaats van afgesneden worden */ 
-.vfrc-carousel img { 
-  object-fit: contain !important; 
-} 
-/* CLOSE - Afbeelding formaat */
+/* ================================
+   CAROUSEL IMAGES
+   ================================ */
+.vfrc-carousel img {
+  object-fit: contain !important;
+}
 
 
-/* OPEN - HEADER COLOR */
+/* ================================
+   HEADER COLOR
+   ================================ */
 .vfrc-header {
   background-color: #000000 !important;
 }
-/* CLOSE - HEADER */
 
 
-/* OPEN - VRF LAUNCHER */
+/* ================================
+   BASE LAUNCHER STYLE
+   ================================ */
 .vfrc-launcher {
   background: #000000 !important;
-  color: #ffffff !important; /* icoon/tekst wit */
-  border: 2px solid #ffffff !important; /* witte rand */
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
 }
-/* CLOSE - VRF LAUNCHER */
 
 
+/* ================================
+   VERTICAL LAUNCHER (BIGGER)
+   ================================ */
 
-/* ============================================
-   ADD-ON: VERTICAL LAUNCHER (visual only)
-   ============================================ */
-
-/* Rotate the launcher vertically */
+/* Rotate vertically + set size */
 .vfrc-launcher {
   writing-mode: vertical-rl !important;
   transform: rotate(180deg) !important;
-  padding: 10px 0 !important;
+
+  width: 60px !important;     /* zichtbaar breed */
+  height: 300px !important;   /* 5× zo lang */
+
+  display: flex !important;
   justify-content: center !important;
+  align-items: center !important;
+
+  padding: 0 !important;
 }
 
-/* Correct rotation for internal media/icon */
+/* Keep icon upright */
 .vfrc-launcher--media,
 .vfrc-launcher--media * {
   transform: rotate(180deg) !important;
 }
 
-/* Keep label readable */
+/* Label readable vertically */
 .vfrc-launcher__label {
   transform: rotate(180deg) !important;
   text-align: center !important;
   white-space: nowrap !important;
+  font-size: 14px !important;
 }
