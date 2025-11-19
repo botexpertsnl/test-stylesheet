@@ -1,83 +1,46 @@
-/* ================================
-   INTER FONT
-   ================================ */
+/* OPEN - Force Inter font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 .vfrc,
 .vfrc * {
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji" !important;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji" !important;
 }
+/* CLOSE - Force Inter font */
 
 
-/* ================================
-   RESPONSE BUTTONS
-   ================================ */
+/* OPEN - Reponse buttons */
 .vfrc-system-response--actions .vfrc-button {
   background-color: #F4F4F4 !important;
   border-color: #F4F4F4 !important;
-  color: #868a91 !important;
+  color: #868a91 !important; /* button text */
 }
 
+/* Optioneel: hover-effect */
 .vfrc-system-response--actions .vfrc-button:hover {
   background-color: #E0E0E0 !important;
   border-color: #E0E0E0 !important;
 }
+/* CLOSE - Reponse buttons */
 
 
-/* ================================
-   CAROUSEL IMAGES
-   ================================ */
-.vfrc-carousel img {
-  object-fit: contain !important;
-}
+/* OPEN - Zorg dat afbeeldingen zich aanpassen in plaats van afgesneden worden */ 
+.vfrc-carousel img { 
+  object-fit: contain !important; 
+} 
+/* CLOSE - Afbeelding formaat */
 
 
-/* ================================
-   HEADER COLOR
-   ================================ */
+/* OPEN - HEADER COLOR */
 .vfrc-header {
   background-color: #000000 !important;
 }
+/* CLOSE - HEADER */
 
 
-/* ================================
-   LAUNCHER – MID RIGHT
-   ================================ */
-.vfrc-launcher__container {
-  position: fixed !important;
-  top: 50% !important;
-  right: 0 !important;
-  transform: translateY(-50%) !important;
-  z-index: 99999 !important;
-}
-
-/* Launcher visual styling */
+/* OPEN - VRF LAUNCHER */
 .vfrc-launcher {
   background: #000000 !important;
-  color: #ffffff !important;
-  border: 2px solid #ffffff !important;
+  color: #ffffff !important; /* icoon/tekst wit */
+  border: 2px solid #ffffff !important; /* witte rand */
 }
-
-
-/* ================================
-   CUSTOM CLOSE BUTTON (X)
-   ================================ */
-#vf-close-launcher {
-  position: fixed !important;
-  top: 50% !important;
-  right: 50px !important;
-  transform: translateY(-180%) !important;
-  width: 28px !important;
-  height: 28px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border-radius: 9999px !important;
-  border: 1px solid rgba(0, 0, 0, 0.18) !important;
-  background: #fff !important;
-  color: #111 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-  cursor: pointer !important;
-  z-index: 2147483647 !important;
-}
+/* CLOSE - VRF LAUNCHER */
