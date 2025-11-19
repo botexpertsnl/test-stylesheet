@@ -74,7 +74,7 @@
   transform: rotate(180deg) !important;
 
   width: 60px !important;    /* zichtbaar breed */
-  height: 300px !important;  /* lang, 5x default */
+  height: 300px !important;  /* lang, ~5x default */
 
   display: flex !important;
   justify-content: center !important;
@@ -95,4 +95,30 @@
   text-align: center !important;
   white-space: nowrap !important;
   font-size: 14px !important;
+}
+
+
+/* ================================
+   WHEN WIDGET IS OPEN: COLLAPSE LAUNCHER
+   ================================ */
+
+/* Als de widget open is (body.vf-open), launcher inklappen/verbergen */
+body.vf-open .vfrc-launcher {
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  border-width: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Label ook verstoppen in open state (voorkomt rare restpixels) */
+body.vf-open .vfrc-launcher__label {
+  font-size: 0 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Container niet meer klikbaar in open state */
+body.vf-open .vfrc-launcher__container {
+  pointer-events: none !important;
 }
