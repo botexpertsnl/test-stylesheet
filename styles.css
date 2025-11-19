@@ -1,1 +1,155 @@
+/* ================================
+   FORCE LAUNCHER VERBERGEN WANNEER WIDGET OPEN IS
+   ================================ */
+body.vf-open .vfrc-launcher__container,
+body.vf-open .vfrc-launcher {
+  width: 6px !important;       /* heel smal maken */
+  height: 60px !important;     /* korter */
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  color: transparent !important;
+  opacity: 0 !important;       /* volledig onzichtbaar */
+  pointer-events: none !important;
+  transition: all 0.2s ease;
+}
+
+/* Label tekst ook weghalen in open state */
+body.vf-open .vfrc-launcher__label::after {
+  content: "" !important;
+}
+
+
+/* ================================
+   Change widget text (default state)
+   ================================ */
+.vfrc-launcher__label {
+  visibility: hidden !important;
+  position: relative !important;
+}
+.vfrc-launcher__label::after {
+  content: "AI assistant";
+  visibility: visible !important;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  color: #fff !important;
+  writing-mode: vertical-rl !important;
+  transform: rotate(180deg) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+}
+
+
+/* ================================
+   TYPOGRAPHY (Inter font)
+   ================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+.vfrc,
+.vfrc * {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji" !important;
+}
+
+
+/* ================================
+   RESPONSE BUTTONS
+   ================================ */
+.vfrc-system-response--actions .vfrc-button {
+  background-color: #f4f4f4 !important;
+  border-color: #f4f4f4 !important;
+  color: #868a91 !important;
+}
+.vfrc-system-response--actions .vfrc-button:hover {
+  background-color: #e0e0e0 !important;
+  border-color: #e0e0e0 !important;
+}
+
+
+/* ================================
+   CAROUSEL IMAGES
+   ================================ */
+.vfrc-carousel img {
+  object-fit: contain !important;
+}
+
+
+/* ================================
+   HEADER
+   ================================ */
+.vfrc-header {
+  background-color: #000000 !important;
+}
+
+
+/* ================================
+   LAUNCHER STYLING (default state)
+   ================================ */
+.vfrc-launcher__container {
+  position: fixed !important;
+  top: 50% !important;
+  right: 0 !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
+  z-index: 99999 !important; /* standaard bovenaan */
+}
+
+.vfrc-launcher {
+  width: 40px !important;
+  height: 160px !important;
+  border-radius: 8px 0 0 8px !important;
+  background: #000000 !important;
+  color: #fff !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.vfrc-launcher--media {
+  display: none !important;
+}
+
+.vfrc-launcher__label {
+  writing-mode: vertical-rl !important;
+  transform: rotate(180deg) !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  text-align: center !important;
+  color: #fff !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+}
+
+
+/* ================================
+   CUSTOM CLOSE BUTTON (X)
+   ================================ */
+#vf-close-launcher {
+  position: fixed !important;
+  top: 50% !important;              
+  right: 50px !important;           
+  transform: translateY(-180%) !important;
+  width: 28px !important;
+  height: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 9999px !important;
+  border: 1px solid rgba(0, 0, 0, 0.18) !important;
+  background: #fff !important;
+  color: #111 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  cursor: pointer !important;
+  z-index: 2147483647 !important;
+}
 
