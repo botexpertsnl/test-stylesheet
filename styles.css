@@ -1,5 +1,48 @@
 /* ================================
-   LAUNCHER IN HET MIDDEN RECHTS
+   INTER FONT
+   ================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.vfrc,
+.vfrc * {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji" !important;
+}
+
+
+/* ================================
+   RESPONSE BUTTONS
+   ================================ */
+.vfrc-system-response--actions .vfrc-button {
+  background-color: #F4F4F4 !important;
+  border-color: #F4F4F4 !important;
+  color: #868a91 !important;
+}
+
+.vfrc-system-response--actions .vfrc-button:hover {
+  background-color: #E0E0E0 !important;
+  border-color: #E0E0E0 !important;
+}
+
+
+/* ================================
+   CAROUSEL IMAGES
+   ================================ */
+.vfrc-carousel img {
+  object-fit: contain !important;
+}
+
+
+/* ================================
+   HEADER COLOR
+   ================================ */
+.vfrc-header {
+  background-color: #000000 !important;
+}
+
+
+/* ================================
+   LAUNCHER – MID RIGHT
    ================================ */
 .vfrc-launcher__container {
   position: fixed !important;
@@ -8,14 +51,22 @@
   transform: translateY(-50%) !important;
   z-index: 99999 !important;
 }
- 
+
+/* Launcher visual styling */
+.vfrc-launcher {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+
+
 /* ================================
    CUSTOM CLOSE BUTTON (X)
    ================================ */
 #vf-close-launcher {
   position: fixed !important;
-  top: 50% !important;              
-  right: 50px !important;           
+  top: 50% !important;
+  right: 50px !important;
   transform: translateY(-180%) !important;
   width: 28px !important;
   height: 28px !important;
