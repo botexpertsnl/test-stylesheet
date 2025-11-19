@@ -15,7 +15,6 @@
   color: #868a91 !important; /* button text */
 }
 
-/* Optioneel: hover-effect */
 .vfrc-system-response--actions .vfrc-button:hover {
   background-color: #E0E0E0 !important;
   border-color: #E0E0E0 !important;
@@ -44,3 +43,30 @@
   border: 2px solid #ffffff !important; /* witte rand */
 }
 /* CLOSE - VRF LAUNCHER */
+
+
+
+/* ============================================
+   ADD-ON: VERTICAL LAUNCHER (visual only)
+   ============================================ */
+
+/* Rotate the launcher vertically */
+.vfrc-launcher {
+  writing-mode: vertical-rl !important;
+  transform: rotate(180deg) !important;
+  padding: 10px 0 !important;
+  justify-content: center !important;
+}
+
+/* Correct rotation for internal media/icon */
+.vfrc-launcher--media,
+.vfrc-launcher--media * {
+  transform: rotate(180deg) !important;
+}
+
+/* Keep label readable */
+.vfrc-launcher__label {
+  transform: rotate(180deg) !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+}
