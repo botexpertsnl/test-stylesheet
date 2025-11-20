@@ -39,75 +39,12 @@
 
 /* ============================================
    DEFAULT VOICEFLOW LAUNCHER VERBERGEN
+   (deze zit WEL in de iframe, dus dit werkt)
    ============================================ */
 .vfrc-launcher {
   display: none !important;
 }
 
-/* ============================================
-   CUSTOM FLOATING LAUNCHER BUTTON - MIDDEN RECHTS
-   ============================================ */
-#vf-custom-launcher {
-  position: fixed;
-  top: 50%;                     /* midden van het scherm */
-  right: 24px;
-  transform: translateY(-50%);  /* centreert verticaal */
-  z-index: 2147483647;
-
-  padding: 10px 18px;
-  border-radius: 9999px;
-  border: none;
-
-  background: #000000;
-  color: #ffffff;
-
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-
-  box-shadow: 0 4px 12px rgba(0,0,0,.25);
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-
-  opacity: 0;
-  transition: opacity 240ms ease, transform 240ms ease, 
-              box-shadow 160ms ease, background-color 160ms ease;
-}
-
-#vf-custom-launcher.vf-custom-launcher--visible {
-  opacity: 1;
-}
-
-/* Icon style */
-#vf-custom-launcher .vf-custom-launcher-icon {
-  font-size: 16px;
-  line-height: 1;
-}
-
-/* Hover state */
-#vf-custom-launcher:hover {
-  box-shadow: 0 6px 18px rgba(0,0,0,.30);
-  background-color: #111111;
-}
-
-/* Focus state */
-#vf-custom-launcher:focus-visible {
-  outline: 2px solid #ffffff;
-  outline-offset: 3px;
-}
-
-/* Wanneer chat open is */
-body.vf-chat-open #vf-custom-launcher {
-  opacity: 0.7;
-}
-
-/* Reduced motion fallback */
-@media (prefers-reduced-motion: reduce) {
-  #vf-custom-launcher {
-    transition: none !important;
-  }
-}
+/* (GEEN #vf-custom-launcher meer hier,
+   want deze knop leeft in de outer page, 
+   niet in de iframe van Voiceflow) */
