@@ -1,22 +1,21 @@
-/* ================================
-   INTER FONT
-   ================================ */
+/* -------------------------------------------------- */
+/* FONT: Force Inter for entire widget */
+/* -------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 .vfrc,
 .vfrc * {
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji" !important;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji" !important;
 }
 
 
-/* ================================
-   RESPONSE BUTTONS
-   ================================ */
+/* -------------------------------------------------- */
+/* RESPONSE BUTTONS */
+/* -------------------------------------------------- */
 .vfrc-system-response--actions .vfrc-button {
   background-color: #F4F4F4 !important;
   border-color: #F4F4F4 !important;
-  color: #868a91 !important;
+  color: #868a91 !important; 
 }
 
 .vfrc-system-response--actions .vfrc-button:hover {
@@ -25,100 +24,32 @@
 }
 
 
-/* ================================
-   CAROUSEL IMAGES
-   ================================ */
-.vfrc-carousel img {
-  object-fit: contain !important;
+/* -------------------------------------------------- */
+/* CAROUSEL IMAGE FITTING */
+/* -------------------------------------------------- */
+.vfrc-carousel img { 
+  object-fit: contain !important; 
 }
 
 
-/* ================================
-   HEADER COLOR
-   ================================ */
+/* -------------------------------------------------- */
+/* HEADER COLOR */
+/* -------------------------------------------------- */
 .vfrc-header {
   background-color: #000000 !important;
 }
 
 
-/* ================================
-   BASE LAUNCHER STYLE
-   (visual colors & border)
-   ================================ */
+/* -------------------------------------------------- */
+/* LAUNCHER: centered right side (50% vertical) */
+/* -------------------------------------------------- */
 .vfrc-launcher {
+  position: fixed !important;
+  right: 20px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
   background: #000000 !important;
   color: #ffffff !important;
   border: 2px solid #ffffff !important;
-}
-
-
-/* ================================
-   POSITION: RIGHT MIDDLE (50%)
-   ================================ */
-.vfrc-launcher__container {
-  position: fixed !important;
-  top: 50% !important;
-  right: 0 !important;
-  transform: translateY(-50%) !important;
-  z-index: 99999 !important;
-}
-
-
-/* ================================
-   VERTICAL LAUNCHER (BIGGER)
-   ================================ */
-
-/* Rotate vertically + set size */
-.vfrc-launcher {
-  writing-mode: vertical-rl !important;
-  transform: rotate(180deg) !important;
-
-  width: 60px !important;    /* zichtbaar breed */
-  height: 300px !important;  /* lang, ~5x default */
-
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-
-  padding: 0 !important;
-}
-
-/* Icon correct draaien */
-.vfrc-launcher--media,
-.vfrc-launcher--media * {
-  transform: rotate(180deg) !important;
-}
-
-/* Label leesbaar verticaal */
-.vfrc-launcher__label {
-  transform: rotate(180deg) !important;
-  text-align: center !important;
-  white-space: nowrap !important;
-  font-size: 14px !important;
-}
-
-
-/* ================================
-   WHEN WIDGET IS OPEN: COLLAPSE LAUNCHER
-   ================================ */
-
-/* Als de widget open is (body.vf-open), launcher inklappen/verbergen */
-body.vf-open .vfrc-launcher {
-  width: 0 !important;
-  height: 0 !important;
-  padding: 0 !important;
-  border-width: 0 !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
-
-/* Label ook verstoppen in open state (voorkomt rare restpixels) */
-body.vf-open .vfrc-launcher__label {
-  font-size: 0 !important;
-  letter-spacing: 0 !important;
-}
-
-/* Container niet meer klikbaar in open state */
-body.vf-open .vfrc-launcher__container {
-  pointer-events: none !important;
+  z-index: 999999 !important;
 }
